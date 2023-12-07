@@ -83,13 +83,14 @@ def audit_sample(name):
 
 
 FAIR_MAP = {'Equal Parity': {'Statistical Parity'},
+            'Sufficiency Parity': {'Sufficiency'},
             'Proportional Parity': {'Impact Parity'},
             'False Positive Rate Parity': {'FPR Parity'},
             'False Negative Rate Parity': {'FNR Parity'},
             'False Discovery Rate Parity': {'FDR Parity'},
             'False Omission Rate Parity': {'FOR Parity'}}
 
-FAIR_MAP_ORDER = ['Equal Parity', 'Proportional Parity', 'False Positive Rate Parity', 'False Discovery Rate Parity',
+FAIR_MAP_ORDER = ['Equal Parity', 'Sufficiency Parity', 'Proportional Parity', 'False Positive Rate Parity', 'False Discovery Rate Parity',
                   'False Negative Rate Parity', 'False Omission Rate Parity']
 
 @app.route('/audit/<dirname>/<name>/', methods=['GET', 'POST'])

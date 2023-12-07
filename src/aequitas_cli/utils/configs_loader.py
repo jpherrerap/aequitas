@@ -10,7 +10,7 @@ __copyright__ = "Copyright \xa9 2018. The University of Chicago. All Rights Rese
 
 class Configs(object):
     original_fairness_measures = (
-        'Statistical Parity', 'Impact Parity', 'FDR Parity',
+        'Statistical Parity', 'Sufficiency', 'Impact Parity', 'FDR Parity',
         'FPR Parity', 'FNR Parity', 'FOR Parity', 'TPR Parity',
         'Precision Parity')
 

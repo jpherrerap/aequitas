@@ -54,6 +54,7 @@ class Fairness(object):
 
         if not fair_measures_depend:
             self.fair_measures_depend = {'Statistical Parity': 'ppr_disparity',
+                                         'Sufficiency': 'precision_disparity',
                                          'Impact Parity': 'pprev_disparity',
                                          'FDR Parity': 'fdr_disparity',
                                          'FPR Parity': 'fpr_disparity',
@@ -80,7 +81,7 @@ class Fairness(object):
         # high level fairness_depend define which input fairness measures are used to calculate the high level ones
         if not high_level_fairness_depend:
             self.high_level_fairness_depend = {
-                'Unsupervised Fairness': ['Statistical Parity', 'Impact Parity'],
+                'Unsupervised Fairness': ['Statistical Parity', 'Sufficiency', 'Impact Parity'],
                 'Supervised Fairness': ['TypeI Parity', 'TypeII Parity']
             }
         else:
@@ -91,7 +92,7 @@ class Fairness(object):
         Determine fairness measures supported based on columns in data frame.
         """
         if 'label_value' not in input_df.columns:
-            self.fair_measures_supported = ['Statistical Parity', 'Impact Parity']
+            self.fair_measures_supported = ['Statistical Parity', 'Sufficiency', 'Impact Parity']
         return self.fair_measures_supported
 
 
