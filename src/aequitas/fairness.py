@@ -20,9 +20,9 @@ class Fairness(object):
         :param tau: the threshold for fair/unfair evaluation
         :param fair_measures_depend: a dictionary containing fairness measures
             as keys and the corresponding input bias disparity as values
-        :param type_parity_depend: a dictionary with Type I, Type II, and
-            Equalized Odds fairness measures as keys and lists of their
-            underlying bias metric parities as values
+        :param type_parity_depend: a dictionary with Type I, Type II,
+            Equalized Odds and Sufficiency fairness measures as keys and lists
+            of their underlying bias metric parities as values
         :param high_level_fairness_depend: a dictionary with supervised and
             unsupervised fairness as keys and lists of their underlying metric
             parities as values.
@@ -73,7 +73,8 @@ class Fairness(object):
         if not type_parity_depend:
             self.type_parity_depend = {'TypeI Parity': ['FDR Parity', 'FPR Parity'],
                                        'TypeII Parity': ['FOR Parity', 'FNR Parity'],
-                                       'Equalized Odds': ['FPR Parity', 'TPR Parity']}
+                                       'Equalized Odds': ['FPR Parity', 'TPR Parity'],
+                                       'Sufficiency': ['Precision Parity', 'NPV Parity']}
         else:
             self.type_parity_depend = type_parity_depend
 
